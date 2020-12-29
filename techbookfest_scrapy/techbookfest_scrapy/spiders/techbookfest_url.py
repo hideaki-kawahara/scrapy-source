@@ -3,7 +3,7 @@ import scrapy_splash
 from techbookfest_scrapy.items import TechbookfestScrapyItem
 
 
-LUA_SCRIPT = """
+LUA_SCRIPT_LIST = """
 function main(splash, args)
   local scroll_to = splash:jsfunc("window.scrollTo")
   splash:go(args.url)
@@ -16,12 +16,13 @@ function main(splash, args)
 end
 """
 
-LUA_SCRIPT2 = """
+LUA_SCRIPT_DETAIL = """
 function main(splash)
     splash.private_mode_enabled = false
     splash:go(splash.args.url)
     splash:wait(5)
     html = splash:html()
+    splash.private_mode_enabled = true
     return html
 end
 """
@@ -39,7 +40,7 @@ class TechbookfestUrlSpider(scrapy.Spider):
             self.parse,
             headers={'User-Agent': USER_AGENT},
             endpoint='execute',
-            args={'lua_source': LUA_SCRIPT},
+            args={'lua_source': LUA_SCRIPT_LIST},
         )
 
     def parse(self, response):
@@ -51,55 +52,42 @@ class TechbookfestUrlSpider(scrapy.Spider):
                     self.after_parse,
                     headers={'User-Agent': USER_AGENT},
                     endpoint='execute',
-                    args={'lua_source': LUA_SCRIPT2},
+                    args={'lua_source': LUA_SCRIPT_DETAIL},
                 )
 
     def after_parse(self, response):
-        title = ''
-        money = ''
-        money1 = ''
-        money2 = ''
-        money3 = ''
-        money4 = ''
+        money_items = [''] * 4
         openning = ''
 
         for information in response.css('div.css-1dbjc4n div.r-18u37iz'):
-            for ss in information.css('div.css-1dbjc4n div.r-13awgt0 div.r-1jkjb'):
-                title = ss.css('h2::text').extract_first()
-            for mm in information.css('div.css-18t94o4'):
-                money = mm.css('div.css-901oao::text').extract()
+            for h2_tag in information.css('div.css-1dbjc4n div.r-13awgt0 div.r-1jkjb'):
+                title = h2_tag.css('h2::text').extract_first()
+            for money_tag in information.css('div.css-18t94o4'):
+                money = money_tag.css('div.css-901oao::text').extract()
                 if len(money) == 0:
                     pass
                 elif '電子版' in money[0]:
-                    money1 = ':'.join(money)
+                    money_items[0] = ':'.join(money)
                 elif '電子＋' in money[0]:
-                    money2 = ':'.join(money)
+                    money_items[1] = ':'.join(money)
                 elif '梅' in money[0]:
-                    money2 = ':'.join(money)
+                    money_items[1] = ':'.join(money)
                 elif '竹' in money[0]:
-                    money3 = ':'.join(money)
+                    money_items[2] = ':'.join(money)
                 elif '松' in money[0]:
-                    money4 = ':'.join(money)
-            for aaa in information.css('div.css-1dbjc4n'):
-                vb = aaa.css('div.r-1enofrn::text').extract_first()
-                if vb is None:
+                    money_items[3] = ':'.join(money)
+            for event in information.css('div.css-1dbjc4n'):
+                openning_tag = event.css('div.r-1enofrn::text').extract_first()
+                if openning_tag is None:
                     pass
-                elif '初出イベント' in vb:
-                    openning = vb
-
+                elif '初出イベント' in openning_tag:
+                    openning = openning_tag
 
         yield TechbookfestScrapyItem(
             title = title,
-            money1 = money1,
-            money2 = money2,
-            money3 = money3,
-            money4 = money4,
+            money1 = money_items[0],
+            money2 = money_items[1],
+            money3 = money_items[2],
+            money4 = money_items[3],
             openning = openning,
             url=response.url)
-
-
-# css-901oao r-1enofrn r-1byouvs r-rjixqe r-hrzydr
-
-# <div role="button" data-focusable="true" tabindex="0" class="css-18t94o4 css-1dbjc4n r-1gvnnxv r-11u66rj r-z2wwpe r-rs99b7 r-t3h0cv r-1e081e0 r-5njf8e"><div dir="auto" class="css-901oao">電子版</div><div dir="auto" class="css-901oao">￥600</div></div>
-
-# <div role="button" data-focusable="true" tabindex="0" class="css-18t94o4 css-1dbjc4n r-1gvnnxv r-11u66rj r-z2wwpe r-rs99b7 r-t3h0cv r-1e081e0 r-5njf8e"><div dir="auto" class="css-901oao">電子版</div><div dir="auto" class="css-901oao">￥500</div></div>
