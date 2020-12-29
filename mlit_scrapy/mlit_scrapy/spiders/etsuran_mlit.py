@@ -8,14 +8,15 @@ class EtsuranMlitSpider(scrapy.Spider):
     start_urls = ['https://etsuran.mlit.go.jp/TAKKEN/chintaiKensaku.do']
     pref = '11'
 
-    def __init__(self, pref='11', *args, **kwargs):
+    def __init__(self, pref = '11', *args, **kwargs):
         super(EtsuranMlitSpider, self).__init__(*args, **kwargs)
         self.pref = pref
 
     def parse(self, response):
         return scrapy.FormRequest.from_response(
                     response,
-                    formdata = dict( kenCode = self.pref, sortValue = '1', choice = '1'
+                    formdata = dict(kenCode = self.pref
+                    ,sortValue = '1', choice = '1'
                     ,dispCount = '50' ,CMD = 'search'),
                     callback = self.after_parse
                 )
@@ -39,7 +40,8 @@ class EtsuranMlitSpider(scrapy.Spider):
 
         yield scrapy.FormRequest.from_response(
                     response,
-                    formdata = dict( kenCode = self.pref, sortValue = '1', choice = '1'
+                    formdata = dict(kenCode = self.pref
+                    ,sortValue = '1', choice = '1'
                     ,dispCount = '50' ,CMD = 'next'),
                     callback = self.after_parse
                 )
