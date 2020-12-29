@@ -7,8 +7,8 @@ function main(splash)
     splash.private_mode_enabled = false
     splash:go(splash.args.url)
     splash:wait(1)
-    splash.private_mode_enabled = true
     html = splash:html()
+    splash.private_mode_enabled = true
     return html
 end
 """
