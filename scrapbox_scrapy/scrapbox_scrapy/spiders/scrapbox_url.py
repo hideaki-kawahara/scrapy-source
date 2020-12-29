@@ -36,6 +36,7 @@ class ScrapboxUrlSpider(scrapy.Spider):
             for hrefs in uls.css('a'):
                 yield ScrapboxScrapyItem(
                     title = hrefs.css('a::text').extract_first(),
-                    url = response.urljoin(hrefs.css('a::attr(href)').extract_first())
+                    url = response.urljoin(hrefs.css('a::attr(href)')
+                    .extract_first())
                 )
 
