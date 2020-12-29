@@ -1,0 +1,9 @@
+version: '3'
+services:
+  scrapinghub:
+    image: scrapinghub/splash:latest
+    container_name: scrapinghub
+    environment:
+      TZ: Asia/Tokyo
+    ports:
+      - 8050:8050
