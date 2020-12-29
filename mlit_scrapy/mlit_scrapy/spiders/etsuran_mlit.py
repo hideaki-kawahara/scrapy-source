@@ -34,7 +34,8 @@ class EtsuranMlitSpider(scrapy.Spider):
                     address = items[ 5 ]
                 )
 
-        next_page = response.css('img[src="/TAKKEN/images/result_move_r.jpg"]::attr(onclick)').extract_first()
+        tag = 'img[src="/TAKKEN/images/result_move_r.jpg"]::attr(onclick)'
+        next_page = response.css(tag).extract_first()
         if next_page == '':
             return
 
