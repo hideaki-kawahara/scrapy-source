@@ -8,7 +8,7 @@ class EtsuranMlitSpider(scrapy.Spider):
     start_urls = ['https://etsuran.mlit.go.jp/TAKKEN/chintaiKensaku.do']
     pref = '11'
 
-    def __init__(self, pref = '11', *args, **kwargs):
+    def __init__(self, pref='11', *args, **kwargs):
         super(EtsuranMlitSpider, self).__init__(*args, **kwargs)
         self.pref = pref
 
