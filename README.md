@@ -12,28 +12,32 @@
 第6章「Lazy loading画面のスクレイピング」を実行する手順を下に記載します。
 
  1. ソースコードをCloneするディレクトリーを作成する。
-    * `mkdir -p scrapy-source`
+     * `mkdir -p scrapy-source`
  2. Cloneする。
-    * `git clone https://github.com/hideaki-kawahara/scrapy-source.git`
+     * `git clone https://github.com/hideaki-kawahara/scrapy-source.git`
  3. chapter5をcheckoutする。
-    * `git checkout chapter5`
+     * `git checkout chapter5`
  4. 仮想環境を作成する。
-    * `python -m venv .venv`
+     * `python -m venv .venv`
  5. 仮想環境に入る。
-    * `source .venv/bin/activate`
+     * `source .venv/bin/activate`
  6. ライブラリーをインストールする。
-    * `pip install -r requirements.txt`
+     * `pip install -r requirements.txt`
  7. dockerのディレクトリーに入る。
-    * `cd docker`
+     * `cd docker`
  8. dockerを起動する。
-    * `docker-compose up -d`
+     * `docker-compose up -d`
  9. 元のディレクトリーに入る。
-    * `cd ..`
+     * `cd ..`
  10. 該当のディレクトリーに入る。
-    * `cd techbookfest_scrapy`
+     * `cd techbookfest_scrapy`
  11. 実行する。
-    * `scrapy crawl techbookfest_url`
+     * `scrapy crawl techbookfest_url`
 
+※実行後に実行キャッシュディレクトリーが作成されるので、他のBrunchをcheckoutしても以前にcheckoutしたchapterのディレクトリーは消えません。気になるようなら削除してください。
+```
+rm -rf 以前にcheckoutしたディレクトリー
+```
 
 ## URLの変更
 技術書典のサイトは会期ごとにURLが変化します。書籍の時点では技術書典10をベースに執筆しました。
@@ -45,7 +49,7 @@
 start_url = 'https://techbookfest.org/event/tbf10/market/newbook'
 ```
 
-技術書典11では下のURLが有効になっています。
+なお、技術書典11では下のURLが有効になっています。
 
  * 技術書典11オンラインマーケット
     * https://techbookfest.org/event/tbf11/market
@@ -56,8 +60,3 @@ start_url = 'https://techbookfest.org/event/tbf10/market/newbook'
  * 技術書典11オンラインマーケット　出展一覧
     * https://techbookfest.org/event/tbf11/offline
 
-
-※実行後に実行キャッシュディレクトリーが作成されるので、他のBrunchをcheckoutしても以前にcheckoutしたchapterのディレクトリーは消えません。気になるようなら削除してください。
-```
-rm -rf 以前にcheckoutしたディレクトリー
-```
