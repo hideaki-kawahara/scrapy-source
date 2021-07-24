@@ -23,12 +23,12 @@
     * `source .venv/bin/activate`
  6. ライブラリーをインストールする。
     * `pip install -r requirements.txt`
- 7. 該当のディレクトーに入る。
+ 7. 該当のディレクトリーに入る。
     * `cd yahoo_news_scrapy`
  8. 実行する。
     * `scrapy crawl yahoo_news`
 
-※実行後に実行キャッシュディレクトリーが作成されるので、他のBrunchをcheckoutしてもchapter1のディレクトリーは消えません。気になるようなら削除してください。
+※実行後に実行キャッシュディレクトリーが作成されるので、他のBrunchをcheckoutしても以前にcheckoutしたchapterのディレクトリーは消えません。気になるようなら削除してください。
 ```
-rm -rf yahoo_news_scrapy
+rm -rf 以前にcheckoutしたディレクトリー
 ```
