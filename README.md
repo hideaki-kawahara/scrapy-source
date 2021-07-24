@@ -8,27 +8,38 @@
 これらの情報による開発、製作、運用の結果について、著者はいかなる責任も負いません。
 
 
-## 第2章「最初のスクレイピング」
-第2章「最初のスクレイピング」を実行する手順を下に記載します。
+## 各章のサンプルコードの取得
+各章のサンプルコードはcheckoutすると取得できます。
 
- 1. ソースコードをCloneするディレクトリーを作成する。
-    * `mkdir -p scrapy-source`
- 2. Cloneする。
-    * `git clone https://github.com/hideaki-kawahara/scrapy-source.git`
- 3. chapter1をcheckoutする。
-    * `git checkout chapter1`
- 4. 仮想環境を作成する。
-    * `python -m venv .venv`
- 5. 仮想環境に入る。
-    * `source .venv/bin/activate`
- 6. ライブラリーをインストールする。
-    * `pip install -r requirements.txt`
- 7. 該当のディレクトーに入る。
-    * `cd yahoo_news_scrapy`
- 8. 実行する。
-    * `scrapy crawl yahoo_news`
 
-※実行後に実行キャッシュディレクトリーが作成されるので、他のBrunchをcheckoutしてもchapter1のディレクトリーは消えません。気になるようなら削除してください。
+### 第2章「最初のスクレイピング」
 ```
-rm -rf yahoo_news_scrapy
+git checkout chapter1
+```
+
+### 第3章「POSTメソッドがあるサイトでスクレイピング」
+```
+git checkout chapter2
+```
+
+### 第4章「データベースを使用する」
+```
+git checkout chapter3
+```
+
+### 第5章「動的画面のスクレイピング」
+```
+git checkout chapter4
+```
+
+### 第6章「Lazy loading画面のスクレイピング」
+```
+git checkout chapter5
+```
+
+## 実行後の注意点
+実行後に実行キャッシュディレクトリーが作成されるので、他のBrunchをcheckoutしても以前にcheckoutしたchapterのディレクトリーは消えません。気になるようなら削除してください。
+
+```
+rm -rf 以前にcheckoutしたディレクトリー
 ```
