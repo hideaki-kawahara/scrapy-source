@@ -1,0 +1,13 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:latest
+    container_name: scrapy_postgres2
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: 'trust'
+      TZ: Asia/Tokyo
+    volumes:
+      - ./.db/data:/usr/local/var/postgres
+      - ./initdb:/docker-entrypoint-initdb.d
+    ports:
+      - 5432:5432
