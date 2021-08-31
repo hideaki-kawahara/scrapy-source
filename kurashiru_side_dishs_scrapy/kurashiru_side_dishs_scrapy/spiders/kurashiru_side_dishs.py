@@ -47,10 +47,3 @@ class KurashiruSideDishsSpider(scrapy.Spider):
             how_to_make=instruction_string,
             tip=re.sub(r'\r\n|\r|\n', '\n', response.css('p.memo-content::text').extract_first())
         )
-
-
-
-
-
-
-

@@ -17,4 +17,3 @@ class Recipe(Base):
     tip = Column('tip', Text)
     created_at = Column(DateTime(timezone=True), nullable=False, server_default=current_timestamp())
     updated_at = Column(DateTime(timezone=True), nullable=False, server_default=current_timestamp())
-
