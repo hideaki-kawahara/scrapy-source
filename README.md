@@ -31,8 +31,6 @@ Licenceについては[Licenceファイル](/LICENSE)を確認してください
 ## 各章のサンプルコードの取得
 各章のサンプルコードはcheckoutすると取得できます。
 
-手順は[マニュアル](/MANUAL.md)を確認してください。
-
 
 ### 第2章「最初のスクレイピング」
 ```
@@ -73,6 +71,9 @@ git checkout chapter7
 ```
 git checkout chapter8
 ```
+
+## 手順
+手順はcheckout後に[マニュアル](/MANUAL.md)を確認してください。
 
 ## 実行後の注意点
 実行後に実行キャッシュディレクトリーが作成されるので、他のBrunchをcheckoutしても以前にcheckoutしたchapterのディレクトリーは消えません。
