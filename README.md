@@ -1,6 +1,6 @@
 # 説明
 
-このRepositoryは「PythonとScrapyを使ったWebスクレイピング実践編〜あのサイトをスクレイピングするまで！〜」で使用したRepositoryになります。
+このRepositoryは「PythonとScrapyを使ったWebスクレイピング実践編～あのサイトをスクレイピングするまで！～」技術同人誌版、「PythonとScrapyを使ったWebスクレイピング実践編」商業誌版で使用したRepositoryになります。
 
 
 ##  ソースコードについて
