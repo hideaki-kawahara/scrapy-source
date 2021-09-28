@@ -73,7 +73,7 @@ git checkout chapter8
 ```
 
 ## 手順
-手順はcheckout後に[マニュアル](/MANUAL.md)を確認してください。
+手順は各章のcheckout後に[マニュアル](/MANUAL.md)を確認してください。
 
 ## 実行後の注意点
 実行後に実行キャッシュディレクトリーが作成されるので、他のBrunchをcheckoutしても以前にcheckoutしたchapterのディレクトリーは消えません。
