@@ -20,7 +20,10 @@
 7. BOOK TECH [https://book-tech.com/books/d018e9c0-c9b9-4106-bda0-12dfcfcd5265](https://book-tech.com/books/d018e9c0-c9b9-4106-bda0-12dfcfcd5265)
 
 ##  ソースコードについて
-本書に記載された内容は、情報の提供のみを目的としています。したがって、Repositoryを用いた開発、製作、運用は、必ずご自身の責任と判断によって行ってください。
+本書に記載された内容は、情報の提供のみを目的としています。
+
+したがって、Repositoryを用いた開発、製作、運用は、必ずご自身の責任と判断によって行ってください。
+
 これらの情報による開発、製作、運用の結果について、著者はいかなる責任も負いません。
 
 Licenceについては[Licenceファイル](/LICENSE)を確認してください。
@@ -69,8 +72,12 @@ git checkout chapter7
 git checkout chapter8
 ```
 
+## 手順
+手順は各章のcheckout後に[マニュアル](/MANUAL.md)を確認してください。
+
 ## 実行後の注意点
 実行後に実行キャッシュディレクトリーが作成されるので、他のBrunchをcheckoutしても以前にcheckoutしたchapterのディレクトリーは消えません。
+
 気になるようなら下のコマンドで削除してください。
 
 ```
