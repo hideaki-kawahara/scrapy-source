@@ -15,19 +15,19 @@
  1. ソースコードをCloneするディレクトリーを作成する。
      * `mkdir -p scrapy-source`
  2. Cloneする。
-     * `git clone https://github.com/hideaki-kawahara/scrapy-source.git}
+     * `git clone https://github.com/hideaki-kawahara/scrapy-source.git`
  3. chapter6をcheckoutする。
-     * `git checkout chapter6}
+     * `git checkout chapter6`
  4. 仮想環境を作成する。
-     * `python -m venv .venv}
+     * `python -m venv .venv`
  5. 仮想環境に入る。
-     * `source .venv/bin/activate}
+     * `source .venv/bin/activate`
  6. ライブラリーをインストールする。
-     * `pip install -r requirements.txt}
+     * `pip install -r requirements.txt`
  7. 該当のディレクトリーに入る。
-     * `cd itmedia_news_scrapy}
+     * `cd itmedia_news_scrapy`
  8. 実行する。
-     * `scrapy crawl itmedia_news}
+     * `scrapy crawl itmedia_news`
  9. https://www.zyte.com/ にアカウントを作成する。
  10. https://www.zyte.com/ でログインする。
  11. deployする。
