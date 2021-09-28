@@ -37,6 +37,25 @@ git checkout chapter4
 git checkout chapter5
 ```
 
+### 第7章「Dropboxと連携する」
+※商業誌のみに掲載してます。
+
+```
+git checkout chapter6
+```
+
+### 第8章「Cloudサービスを使ってスクレイピング」
+※商業誌のみに掲載してます。
+```
+git checkout chapter7
+```
+
+### 第9章「cloudサービスで定期的実行をする」
+※商業誌のみに掲載してます。
+```
+git checkout chapter8
+```
+
 ## 実行後の注意点
 実行後に実行キャッシュディレクトリーが作成されるので、他のBrunchをcheckoutしても以前にcheckoutしたchapterのディレクトリーは消えません。気になるようなら削除してください。
 
