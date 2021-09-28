@@ -33,41 +33,49 @@ Licenceについては[Licenceファイル](/LICENSE)を確認してください
 ```
 git checkout chapter1
 ```
+手順は[マニュアル](/blob/chapter1/MANUAL.md)を確認してください。
 
 ### 第3章「POSTメソッドがあるサイトでスクレイピング」
 ```
 git checkout chapter2
 ```
+手順は[マニュアル](/blob/chapter2/MANUAL.md)を確認してください。
 
 ### 第4章「データベースを使用する」
 ```
 git checkout chapter3
 ```
+手順は[マニュアル](/blob/chapter3/MANUAL.md)を確認してください。
 
 ### 第5章「動的画面のスクレイピング」
 ```
 git checkout chapter4
 ```
+手順は[マニュアル](/blob/chapter4/MANUAL.md)を確認してください。
 
 ### 第6章「Lazy loading画面のスクレイピング」
 ```
 git checkout chapter5
 ```
+手順は[マニュアル](/blob/chapter5/MANUAL.md)を確認してください。
 
 ### 第7章「Dropboxと連携する」
 ```
 git checkout chapter6
 ```
+手順は[マニュアル](/blob/chapter6/MANUAL.md)を確認してください。
 
 ### 第8章「Cloudサービスを使ってスクレイピング」
 ```
 git checkout chapter7
 ```
+手順は[マニュアル](/blob/chapter7/MANUAL.md)を確認してください。
 
 ### 第9章「cloudサービスで定期的実行をする」
 ```
 git checkout chapter8
 ```
+手順は[マニュアル](/blob/chapter8/MANUAL.md)を確認してください。
 
 ## 実行後の注意点
 実行後に実行キャッシュディレクトリーが作成されるので、他のBrunchをcheckoutしても以前にcheckoutしたchapterのディレクトリーは消えません。
